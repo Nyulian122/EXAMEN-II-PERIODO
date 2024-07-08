@@ -35,19 +35,25 @@ document.addEventListener('DOMContentLoaded', function () {
         detallesDiv.className = 'detalles-usuario';
         detallesDiv.innerHTML = `<strong>${nombreCompleto}</strong><br>${correoElectronico}`;
 
-        usuarioDiv.appendChild(icono);
-        usuarioDiv.appendChild(detallesDiv);
-
         var asignacionesDiv = document.createElement('div');
         asignacionesDiv.className = 'asignaciones-usuario';
 
-        for (var i = 1; i <= 3; i++) {
-            var asignacion = document.createElement('div');
-            asignacion.className = 'asignacion';
-            asignacion.innerText = `Asignación ${i}`;
-            asignacionesDiv.appendChild(asignacion);
-        }
+        var botonAgregar = document.createElement('button');
+        botonAgregar.className = 'boton-agregar';
+        botonAgregar.innerText = '+';
+        botonAgregar.onclick = function () {
+            var nombreAsignacion = prompt('Ingrese el nombre de la asignación:');
+            if (nombreAsignacion) {
+                var asignacion = document.createElement('div');
+                asignacion.className = 'asignacion';
+                asignacion.innerText = nombreAsignacion;
+                asignacionesDiv.appendChild(asignacion);
+            }
+        };
 
+        usuarioDiv.appendChild(icono);
+        usuarioDiv.appendChild(detallesDiv);
+        usuarioDiv.appendChild(botonAgregar);
         usuarioDiv.appendChild(asignacionesDiv);
         contenedorDatos.appendChild(usuarioDiv);
 
