@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/config.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div class="container">
+        <button class="boton1">Ingrese nuevo usuario</button>
+    </div>
+
+   
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Ingrese nuevo usuario</h2>
+            <form id="userForm">
+                <label for="fullname">Nombre completo:</label>
+                <input type="text" id="fullname" name="fullname" required>
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+    </div>
+
+ 
+    <div id="dataModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="user-info">
+                <img src="user-icon.png" alt="User Icon" class="user-icon">
+                <div class="user-details">
+                    <h2 id="displayName">Nombre Segundo Nombre</h2>
+                    <p id="displayEmail">nombreSegundo@gmail.com</p>
+                </div>
+                <div class="user-assignments">
+                    <div class="mas">+</div>
+                    <button class="assignment">Asignación 1</button>
+                    <button class="assignment">Asignación 2</button>
+                    <button class="assignment">Asignación 3</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>
