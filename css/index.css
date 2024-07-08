@@ -1,18 +1,21 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-}
-
-.container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
+    background-color: #f4f4f4;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
-.boton1 {
+.contenedor {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.boton {
     padding: 10px 20px;
     background-color: #007bff;
     color: white;
@@ -22,11 +25,11 @@ body {
     transition: background-color 0.3s;
 }
 
-.boton1:hover {
+.boton:hover {
     background-color: #0056b3;
 }
 
-/* Modal styles */
+/* Estilos del Modal */
 .modal {
     display: none; 
     position: fixed; 
@@ -40,37 +43,37 @@ body {
     background-color: rgba(0,0,0,0.4); 
 }
 
-.modal-content {
+.modal-contenido {
     background-color: #fefefe;
     margin: 15% auto; 
     padding: 20px;
     border: 1px solid #888;
     width: 90%; 
-    max-width: 800px;
+    max-width: 500px;
     border-radius: 10px;
     box-sizing: border-box;
 }
 
-.close {
+.cerrar {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.cerrar:hover,
+.cerrar:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
 }
 
-form {
+formulario {
     display: flex;
     flex-direction: column;
 }
 
-label {
+etiqueta {
     margin: 10px 0 5px;
 }
 
@@ -98,38 +101,46 @@ input[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-.user-info {
+.datos-usuario {
     display: flex;
     align-items: center;
     padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    width: 90%;
+    max-width: 800px;
+    box-sizing: border-box;
 }
 
-.user-icon {
+.icono-usuario {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     margin-right: 15px;
 }
 
-.user-details {
+.detalles-usuario {
     flex-grow: 1;
 }
 
-.user-assignments {
+.asignaciones-usuario {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
     padding-top: 20px;
     box-sizing: border-box;
 }
 
-.user-assignments span {
+.asignaciones-usuario span {
     font-size: 1.5em;
     margin-right: 10px;
 }
 
-.assignment {
+.asignacion {
     padding: 5px 10px;
     margin-right: 5px;
     border: 1px solid #ccc;
@@ -139,12 +150,6 @@ input[type="submit"]:hover {
     transition: background-color 0.3s;
 }
 
-.assignment:hover {
+.asignacion:hover {
     background-color: #f0f0f0;
-}
-
-.mas{
-    border-radius:3px;
-    border: 1px solid black;
-    cursor: pointer;
 }

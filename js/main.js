@@ -1,47 +1,57 @@
-document.addEventListener('DOMContentLoaded', (event) => {
- 
-    var formModal = document.getElementById("myModal");
-    var dataModal = document.getElementById("dataModal");
+document.addEventListener('DOMContentLoaded', function () {
+    var modal = document.getElementById('miModal');
+    var btn = document.querySelector('.boton');
+    var span = document.getElementsByClassName('cerrar')[0];
+    var formulario = document.getElementById('formularioUsuario');
+    var contenedorDatos = document.getElementById('contenedorDatos');
 
-    
-    var btn = document.querySelector(".boton1");
-
-    
-    var spans = document.getElementsByClassName("close");
-
-    
-    btn.onclick = function() {
-        formModal.style.display = "block";
+    btn.onclick = function () {
+        modal.style.display = 'block';
     }
 
+    span.onclick = function () {
+        modal.style.display = 'none';
+    }
 
-    for (var i = 0; i < spans.length; i++) {
-        spans[i].onclick = function() {
-            formModal.style.display = "none";
-            dataModal.style.display = "none";
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
         }
     }
 
-
-    window.onclick = function(event) {
-        if (event.target == formModal || event.target == dataModal) {
-            formModal.style.display = "none";
-            dataModal.style.display = "none";
-        }
-    }
-
-
-    var form = document.getElementById("userForm");
-    form.onsubmit = function(event) {
+    formulario.addEventListener('submit', function (event) {
         event.preventDefault();
+        var nombreCompleto = document.getElementById('nombreCompleto').value;
+        var correoElectronico = document.getElementById('correoElectronico').value;
 
-        var fullName = document.getElementById("fullname").value;
-        var email = document.getElementById("email").value;
+        var usuarioDiv = document.createElement('div');
+        usuarioDiv.className = 'datos-usuario';
 
-        document.getElementById("displayName").textContent = fullName;
-        document.getElementById("displayEmail").textContent = email;
+        var icono = document.createElement('img');
+        icono.className = 'icono-usuario';
+        icono.src = 'https://via.placeholder.com/50';
 
-        formModal.style.display = "none";
-        dataModal.style.display = "block";
-    }
+        var detallesDiv = document.createElement('div');
+        detallesDiv.className = 'detalles-usuario';
+        detallesDiv.innerHTML = `<strong>${nombreCompleto}</strong><br>${correoElectronico}`;
+
+        usuarioDiv.appendChild(icono);
+        usuarioDiv.appendChild(detallesDiv);
+
+        var asignacionesDiv = document.createElement('div');
+        asignacionesDiv.className = 'asignaciones-usuario';
+
+        for (var i = 1; i <= 3; i++) {
+            var asignacion = document.createElement('div');
+            asignacion.className = 'asignacion';
+            asignacion.innerText = `Asignación ${i}`;
+            asignacionesDiv.appendChild(asignacion);
+        }
+
+        usuarioDiv.appendChild(asignacionesDiv);
+        contenedorDatos.appendChild(usuarioDiv);
+
+        modal.style.display = 'none';
+        formulario.reset();
+    });
 });

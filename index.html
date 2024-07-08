@@ -1,51 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Documento</title>
     <link rel="stylesheet" href="./css/config.css">
     <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-    <div class="container">
-        <button class="boton1">Ingrese nuevo usuario</button>
+    <div class="contenedor">
+        <button class="boton">Ingrese nuevo usuario</button>
     </div>
 
    
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
+    <div id="miModal" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar">&times;</span>
             <h2>Ingrese nuevo usuario</h2>
-            <form id="userForm">
-                <label for="fullname">Nombre completo:</label>
-                <input type="text" id="fullname" name="fullname" required>
-                <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email" required>
-                <input type="submit" value="Enviar">
+            <form id="formularioUsuario">
+                <etiqueta for="nombreCompleto">Nombre completo:</etiqueta>
+                <input type="text" id="nombreCompleto" name="nombreCompleto" required>
+                <etiqueta for="correoElectronico">Correo electrónico:</etiqueta>
+                <input type="email" id="correoElectronico" name="correoElectronico" required>
+                <input type="submit" value="Agregar Usuario">
             </form>
         </div>
     </div>
 
- 
-    <div id="dataModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div class="user-info">
-                <img src="https://github.com/Nyulian122/Imagenes_Portafolio/blob/main/Copia%20de%20LogoSCL-45.png?raw=true  " alt="User Icon" class="user-icon">
-                <div class="user-details">
-                    <h2 id="displayName">Nombre Segundo Nombre</h2>
-                    <p id="displayEmail">nombreSegundo@gmail.com</p>
-                </div>
-                <div class="user-assignments">
-                    <div class="mas">+</div>
-                    <button class="assignment">Asignación 1</button>
-                    <button class="assignment">Asignación 2</button>
-                    <button class="assignment">Asignación 3</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- Contenedor de datos del usuario -->
+    <div id="contenedorDatos"></div>
 
     <script src="./js/main.js"></script>
 </body>
